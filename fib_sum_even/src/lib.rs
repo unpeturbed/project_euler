@@ -1,7 +1,13 @@
-pub fn fib(n: u32) -> u32 {
-    if n == 0 || n == 1 {
-        1
-    } else {
-        fib(n - 1) + fib(n - 2)
+pub fn fib(limit: u32) -> u32 {
+    let (mut previous, mut sum, mut current) = (0, 0, 1);
+
+    while current <= limit {
+        if current % 2 == 0 {
+            sum += current;
+        }
+        let next = previous + current;
+        previous = current;
+        current = next;
     }
+    sum
 }
