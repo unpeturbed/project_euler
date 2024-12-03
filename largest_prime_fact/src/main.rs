@@ -1,7 +1,7 @@
-use largest_prime_fact::prime_factors;
+use largest_prime_fact::PrimeUtils;
 fn main() {
     let number = 600851475143;
-    let (factors, largest) = prime_factors(number);
+    let (factors, largest) = number.prime_factors();
     println!("Prime factors = {:?}", factors);
 
     println!("The largest factor of {} is {}", number, largest);
