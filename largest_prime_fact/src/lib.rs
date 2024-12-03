@@ -1,4 +1,4 @@
-pub fn prime_factors(mut number: u64) -> Vec<u64> {
+pub fn prime_factors(mut number: u64) -> (Vec<u64>, u64) {
     let mut prime = 2;
 
     let mut lop: Vec<u64> = Vec::new();
@@ -13,5 +13,12 @@ pub fn prime_factors(mut number: u64) -> Vec<u64> {
     if number > 1 {
         lop.push(number);
     }
-    lop
+
+    let mut max_prime = 0;
+    for num in &lop {
+        if *num > max_prime {
+            max_prime = *num;
+        }
+    }
+    (lop, max_prime)
 }
